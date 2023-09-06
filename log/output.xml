@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230906 14:22:31.046" rpa="false" schemaversion="4">
+<suite id="s1" name="N11Tests" source="C:\Users\HakanBatirhan\IdeaProjects\RobotFramework\Tests\N11Tests.robot">
+<test id="s1-t1" name="N11 Arama Testi" line="6">
+<kw name="N11 Sayfasini Ac" library="Keywords" type="SETUP">
+<kw name="Open N11 Sayfasi" library="N11Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230906 14:22:31.276" level="INFO">Opening browser 'chrome' to base url 'https://www.n11.com/'.</msg>
+<status status="PASS" starttime="20230906 14:22:31.275" endtime="20230906 14:22:35.403"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230906 14:22:35.403" endtime="20230906 14:22:35.531"/>
+</kw>
+<status status="PASS" starttime="20230906 14:22:31.275" endtime="20230906 14:22:35.531"/>
+</kw>
+<status status="PASS" starttime="20230906 14:22:31.275" endtime="20230906 14:22:35.531"/>
+</kw>
+<kw name="Arama Yap" library="Keywords">
+<arg>${Aranacak_urun}</arg>
+<kw name="Arama Yap" library="N11Page">
+<arg>${Aranacak_urun}</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${AramaYeri}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230906 14:22:35.534" endtime="20230906 14:22:35.643"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230906 14:22:38.645" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230906 14:22:35.644" endtime="20230906 14:22:38.645"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AramaYeri}</arg>
+<arg>${Aranacak_urun}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230906 14:22:38.647" level="INFO">Typing text 'mackbook pro 2023' into text field 'id=searchData'.</msg>
+<status status="PASS" starttime="20230906 14:22:38.646" endtime="20230906 14:22:38.732"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230906 14:22:41.733" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230906 14:22:38.732" endtime="20230906 14:22:41.733"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Alert}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230906 14:22:41.733" endtime="20230906 14:22:41.764"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Alert}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230906 14:22:41.765" level="INFO">Clicking element 'xpath=//div[@class='dn-slide-buttons horizontal']/button[@class='dn-slide-deny-btn']'.</msg>
+<status status="PASS" starttime="20230906 14:22:41.764" endtime="20230906 14:22:41.872"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AramaButonu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230906 14:22:41.872" level="INFO">Clicking element 'class=iconsSearch'.</msg>
+<status status="PASS" starttime="20230906 14:22:41.872" endtime="20230906 14:22:44.134"/>
+</kw>
+<status status="PASS" starttime="20230906 14:22:35.533" endtime="20230906 14:22:44.134"/>
+</kw>
+<status status="PASS" starttime="20230906 14:22:35.532" endtime="20230906 14:22:44.134"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230906 14:22:44.135" endtime="20230906 14:22:46.345"/>
+</kw>
+<status status="PASS" starttime="20230906 14:22:31.273" endtime="20230906 14:22:46.345"/>
+</test>
+<status status="PASS" starttime="20230906 14:22:31.049" endtime="20230906 14:22:46.346"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="N11Tests">N11Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
