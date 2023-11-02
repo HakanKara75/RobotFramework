@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    // Ortam değişkenlerini tanımla
+    environment {
+        VENV_ACTIVATE = "${WORKSPACE}/venv/bin/activate"
+    }
+
+    stages {
+        stage('Preparation') {
+            steps {
+                script {
+                    // Sanal ortamı oluştur
+                    sh "python3 -m venv ${WORKSPACE}/venv"
+                }
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Sanal ortamı etkinleştir
+                    sh "source ${VENV_ACTIVATE}"
+                    // Gerekli bağımlılıkları yükle
+                    sh "pip3 install robotframework"
+                    sh "pip3 install robotframework-seleniumlibrary"
+                    // Diğer bağımlılıkları ekleyebilirsin
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Sanal ortamı etkinleştir
+                    sh "source ${VENV_ACTIVATE}"
+                    // Robot Framework testlerini çalıştır
+                    sh "python3 -m robot /Users/macbook/IdeaProjects/InstagramRobot/tests/InstagramTests.robot"
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                // Sanal ortamı kapat (veya kapatılmışsa hata oluşturmayı önle)
+                sh "deactivate || true"
+            }
+        }
+    }
+}
